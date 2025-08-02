@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shiem Babu | Professional Portfolio & CV</title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  
+  <!-- Animation Libraries -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #6366f1;
+      --secondary-color: #8b5cf6;
+      --accent-color: #f59e0b;
+      --success-color: #10b981;
+      --danger-color: #ef4444;
+      --dark-bg: #0f172a;
+      --card-bg: #1e293b;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --border-color: #334155;
+      --gradient-1: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      --gradient-2: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+      --gradient-3: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+      --gradient-4: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--card-bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--secondary-color);
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+    }
+
+         .navbar-brand {
+       font-family: 'Poppins', sans-serif;
+       font-weight: 800;
+       font-size: 1.5rem;
+       background: linear-gradient(45deg, #3498db, #9b59b6);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       background-clip: text;
+     }
+
+    .nav-link {
+      color: var(--text-secondary) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+         .nav-link::after {
+       content: '';
+       position: absolute;
+       bottom: -5px;
+       left: 50%;
+       width: 0;
+       height: 2px;
+       background: linear-gradient(45deg, #3498db, #9b59b6);
+       transition: all 0.3s ease;
+       transform: translateX(-50%);
+     }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--text-primary) !important;
+    }
+
+    /* Hero Section */
+         .hero-section {
+       min-height: 100vh;
+       display: flex;
+       align-items: center;
+       position: relative;
+       background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+       overflow: hidden;
+     }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent-color);
+      box-shadow: var(--shadow-strong);
+      margin-bottom: 2rem;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+         .hero-title {
+       font-family: 'Poppins', sans-serif;
+       font-size: 3.5rem;
+       font-weight: 800;
+       margin-bottom: 1rem;
+       background: linear-gradient(45deg, #fff, #3498db, #9b59b6);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       background-clip: text;
+     }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-custom {
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+         .btn-primary-custom {
+       background: linear-gradient(45deg, #3498db, #9b59b6);
+       color: white;
+     }
+
+    .btn-secondary-custom {
+      background: transparent;
+      color: var(--text-primary);
+      border: 2px solid var(--text-primary);
+    }
+
+    .btn-custom:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+         .section-title {
+       font-family: 'Poppins', sans-serif;
+       font-size: 2.5rem;
+       font-weight: 700;
+       text-align: center;
+       margin-bottom: 3rem;
+       background: linear-gradient(45deg, #3498db, #9b59b6, #2ecc71);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       background-clip: text;
+     }
+
+    .card-custom {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+         .card-custom::before {
+       content: '';
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       height: 4px;
+       background: linear-gradient(45deg, #3498db, #9b59b6);
+     }
+
+    .card-custom:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .skill-item {
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .skill-item:hover {
+      background: rgba(99, 102, 241, 0.2);
+      transform: scale(1.05);
+    }
+
+         .skill-icon {
+       font-size: 2rem;
+       margin-bottom: 0.5rem;
+       color: var(--accent-color);
+     }
+
+     /* Personal Information Styles */
+     .personal-info {
+       margin-top: 1rem;
+     }
+
+     .info-item {
+       padding: 0.5rem 0;
+       border-bottom: 1px solid var(--border-color);
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+     }
+
+     .info-item:last-child {
+       border-bottom: none;
+     }
+
+     .info-item strong {
+       color: var(--accent-color);
+       font-weight: 600;
+     }
+
+     .card-custom h3 {
+       color: var(--text-primary);
+       font-size: 1.3rem;
+       margin-bottom: 1rem;
+       display: flex;
+       align-items: center;
+     }
+
+          .card-custom h3 i {
+       color: var(--accent-color);
+       margin-right: 0.5rem;
+     }
+
+     /* Expertise & Language Section */
+     .expertise-header {
+       background: linear-gradient(45deg, #2c3e50, #34495e);
+       margin: -2rem -2rem 1.5rem -2rem;
+       padding: 1rem 2rem;
+       border-radius: 15px 15px 0 0;
+     }
+
+     .expertise-header h3 {
+       color: white;
+       margin: 0;
+       font-size: 1.2rem;
+       font-weight: 700;
+     }
+
+     .expertise-list {
+       display: flex;
+       flex-direction: column;
+       gap: 1rem;
+     }
+
+     .expertise-item {
+       display: flex;
+       align-items: center;
+       gap: 1rem;
+       padding: 0.8rem;
+       background: rgba(99, 102, 241, 0.1);
+       border-radius: 10px;
+       transition: all 0.3s ease;
+     }
+
+     .expertise-item:hover {
+       background: rgba(99, 102, 241, 0.2);
+       transform: translateX(10px);
+     }
+
+     .expertise-item i {
+       color: var(--accent-color);
+       font-size: 1.2rem;
+       width: 20px;
+       text-align: center;
+     }
+
+     .expertise-item span {
+       font-weight: 500;
+       color: var(--text-primary);
+     }
+
+     .language-section {
+       margin-bottom: 2rem;
+     }
+
+     .language-item {
+       margin-bottom: 1.5rem;
+     }
+
+     .language-info {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       margin-bottom: 0.5rem;
+     }
+
+     .language-name {
+       font-weight: 600;
+       color: var(--text-primary);
+     }
+
+     .language-percentage {
+       color: var(--accent-color);
+       font-weight: 700;
+     }
+
+     .progress-bar {
+       width: 100%;
+       height: 8px;
+       background: rgba(255, 255, 255, 0.1);
+       border-radius: 4px;
+       overflow: hidden;
+     }
+
+     .progress-fill {
+       height: 100%;
+       background: linear-gradient(45deg, #3498db, #9b59b6);
+       border-radius: 4px;
+       transition: width 1s ease;
+     }
+
+     .customer-service-section {
+       border-top: 1px solid var(--border-color);
+       padding-top: 1.5rem;
+     }
+
+     .customer-service-section h4 {
+       color: var(--text-primary);
+       font-size: 1.1rem;
+       margin-bottom: 1rem;
+       display: flex;
+       align-items: center;
+     }
+
+     .customer-service-section h4 i {
+       color: var(--accent-color);
+       margin-right: 0.5rem;
+     }
+
+     .service-list {
+       list-style: none;
+       padding: 0;
+       margin: 0;
+     }
+
+     .service-list li {
+       padding: 0.5rem 0;
+       color: var(--text-secondary);
+       position: relative;
+       padding-left: 1.5rem;
+     }
+
+     .service-list li::before {
+       content: '•';
+       color: var(--accent-color);
+       font-weight: bold;
+       position: absolute;
+       left: 0;
+     }
+
+     /* Experience Timeline */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+         .timeline::before {
+       content: '';
+       position: absolute;
+       left: 50%;
+       top: 0;
+       bottom: 0;
+       width: 2px;
+       background: linear-gradient(45deg, #3498db, #9b59b6);
+       transform: translateX(-50%);
+     }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      width: 45%;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 55%;
+    }
+
+    .timeline-content {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 15px;
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      background: var(--accent-color);
+      border-radius: 50%;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::before {
+      right: -60px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content::before {
+      left: -60px;
+    }
+
+    .timeline-date {
+      color: var(--accent-color);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-company {
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+         /* Education Section */
+     .education-card {
+       background: var(--card-bg);
+       border: 1px solid var(--border-color);
+       border-radius: 15px;
+       padding: 2rem;
+       text-align: center;
+       transition: all 0.3s ease;
+       height: 100%;
+     }
+
+     .education-card:hover {
+       transform: translateY(-5px);
+       box-shadow: var(--shadow-strong);
+     }
+
+     .education-icon {
+       font-size: 3rem;
+       color: var(--accent-color);
+       margin-bottom: 1rem;
+     }
+
+     /* Projects Section */
+
+         .project-card {
+       background: var(--card-bg);
+       border: 1px solid var(--border-color);
+       border-radius: 15px;
+       overflow: hidden;
+       transition: all 0.3s ease;
+       height: 100%;
+     }
+
+     .project-card:hover {
+       transform: translateY(-10px);
+       box-shadow: var(--shadow-strong);
+     }
+
+    .project-image {
+      width: 100%;
+      height: 200px;
+      background: var(--gradient-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: white;
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .project-description {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .project-tech {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tech-tag {
+      background: rgba(99, 102, 241, 0.2);
+      color: var(--primary-color);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      transform: translateX(10px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-icon {
+      font-size: 1.5rem;
+      color: var(--accent-color);
+      width: 40px;
+      text-align: center;
+    }
+
+    .contact-form {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 15px;
+      padding: 2rem;
+    }
+
+    .form-control {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: var(--text-primary);
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-control:focus {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.25);
+      color: var(--text-primary);
+    }
+
+    .form-control::placeholder {
+      color: var(--text-secondary);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--card-bg);
+      border-top: 1px solid var(--border-color);
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+         .social-link {
+       width: 50px;
+       height: 50px;
+       border-radius: 50%;
+       background: linear-gradient(45deg, #3498db, #9b59b6);
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       color: white;
+       text-decoration: none;
+       transition: all 0.3s ease;
+     }
+
+    .social-link:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-strong);
+      color: white;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 50px;
+      }
+
+      .timeline-content::before {
+        left: -30px !important;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Loading Animation */
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--dark-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loading.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid var(--border-color);
+      border-top: 3px solid var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Particle Background */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      animation: float-particle 20s infinite linear;
+    }
+
+    @keyframes float-particle {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Shiem Babu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#personal">Personal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#expertise">Expertise</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="particles" id="particles"></div>
+    <div class="container">
+      <div class="hero-content" data-aos="fade-up">
+        <img src="image/s.png" alt="Shiem Babu" class="profile-image">
+        <h1 class="hero-title">Md. Shiem Babu</h1>
+        <p class="hero-subtitle">Admin Officer | IT Support Specialist | Sales & Marketing</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-custom btn-primary-custom">Get In Touch</a>
+          <a href="#projects" class="btn-custom btn-secondary-custom">View My Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">About Me</h2>
+      <div class="about-content">
+        <div class="about-text" data-aos="fade-right">
+          <p>I am Shiem Babu, a dedicated and skilled professional with expertise in administration, IT support, and content creation. Born on June 29, 2003, I am a Bangladeshi national with a strong foundation in technology and business operations.</p>
+          <p>With over 17 months of experience in communication, 12 months in customer care, and 12 months in sales & marketing, I have developed a comprehensive skill set that combines technical knowledge with excellent interpersonal abilities. My current role as Admin Officer at Butterfly IT Zone has allowed me to excel in managing IT services, handling network issues, and providing exceptional client support.</p>
+          <p>I am passionate about continuous learning and staying updated with the latest technological trends. My goal is to contribute to innovative projects while growing both personally and professionally in a dynamic environment.</p>
+        </div>
+        <div class="skills-grid" data-aos="fade-left">
+          <div class="skill-item">
+            <div class="skill-icon"><i class="fab fa-html5"></i></div>
+            <div>HTML5 & CSS3</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon"><i class="fas fa-pen-fancy"></i></div>
+            <div>Content Creation</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon"><i class="fas fa-tools"></i></div>
+            <div>IT Support & Network</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon"><i class="fas fa-file-word"></i></div>
+            <div>MS Office Suite</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon"><i class="fas fa-users"></i></div>
+            <div>Customer Care</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+            <div>Sales & Marketing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Information Section -->
+  <section id="personal" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Personal Information</h2>
+      <div class="row">
+        <div class="col-md-6" data-aos="fade-right">
+          <div class="card-custom">
+            <h3><i class="fas fa-user-circle me-2"></i>Basic Information</h3>
+            <div class="personal-info">
+              <div class="info-item">
+                <strong>Full Name:</strong> Md. Shiem Babu
+              </div>
+              <div class="info-item">
+                <strong>Father's Name:</strong> Md. Ekramul Haque
+              </div>
+              <div class="info-item">
+                <strong>Mother's Name:</strong> Mst. Shahida Begum
+              </div>
+              <div class="info-item">
+                <strong>Date of Birth:</strong> June 29, 2003
+              </div>
+              <div class="info-item">
+                <strong>Gender:</strong> Male
+              </div>
+              <div class="info-item">
+                <strong>Marital Status:</strong> Single
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+          <div class="card-custom">
+            <h3><i class="fas fa-id-card me-2"></i>National Details</h3>
+            <div class="personal-info">
+              <div class="info-item">
+                <strong>Nationality:</strong> Bangladeshi
+              </div>
+              <div class="info-item">
+                <strong>Religion:</strong> Islam
+              </div>
+              <div class="info-item">
+                <strong>National ID:</strong> 8708778660
+              </div>
+              <div class="info-item">
+                <strong>Blood Group:</strong> A+
+              </div>
+              <div class="info-item">
+                <strong>Height:</strong> 5.8 meters
+              </div>
+              <div class="info-item">
+                <strong>Weight:</strong> 61 kg
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise & Language Section -->
+  <section id="expertise" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Expertise & Languages</h2>
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="card-custom">
+            <div class="expertise-header">
+              <h3><i class="fas fa-star me-2"></i>EXPERTISE</h3>
+            </div>
+            <div class="expertise-list">
+              <div class="expertise-item">
+                <i class="fas fa-comments"></i>
+                <span>Engaging Communication</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-handshake"></i>
+                <span>Customer Relationship Building</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-balance-scale"></i>
+                <span>Negotiation</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-brain"></i>
+                <span>Critical Thinking</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-users-cog"></i>
+                <span>Management Skills</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-lightbulb"></i>
+                <span>Creativity</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="card-custom">
+            <div class="expertise-header">
+              <h3><i class="fas fa-language me-2"></i>LANGUAGE</h3>
+            </div>
+            <div class="language-section">
+              <div class="language-item">
+                <div class="language-info">
+                  <span class="language-name">Bengali</span>
+                  <span class="language-percentage">100%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 100%"></div>
+                </div>
+              </div>
+              <div class="language-item">
+                <div class="language-info">
+                  <span class="language-name">English</span>
+                  <span class="language-percentage">100%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 100%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="customer-service-section">
+              <h4><i class="fas fa-headset me-2"></i>Customer Service Excellence</h4>
+              <ul class="service-list">
+                <li>Handling customer inquiries, resolving issues, and ensuring customer satisfaction.</li>
+                <li>Engaged with clients effectively, building positive relationships and enhancing customer loyalty.</li>
+                <li>Demonstrated patience, problem-solving skills, and clear communication in all interactions, both in person and over the phone.</li>
+                <li>Contributed to a supportive team environment, working collaboratively to meet service goals and enhance overall customer experience.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Professional Experience</h2>
+      <div class="timeline">
+          <div class="timeline-item" data-aos="fade-right">
+           <div class="timeline-content">
+             <div class="timeline-date">August 2023 - January 2025</div>
+             <div class="timeline-title">Admin Officer</div>
+             <div class="timeline-company">Butterfly IT Zone</div>
+             <p>Managing client services, providing IT support, and handling office administration tasks. Responsible for network troubleshooting, software installation, and maintaining client relationships. Specialized in communication (17 months), customer care (12 months), and sales & marketing (12 months).</p>
+           </div>
+         </div>
+
+         <!-- <div class="timeline-item" data-aos="fade-left">
+          <div class="timeline-content">
+            <div class="timeline-date">August 2023 - January 2025</div>
+            <div class="timeline-title">Admin Officer</div>
+            <div class="timeline-company">Butterfly IT Zone</div>
+            <p>Managing client services, providing IT support, and handling office administration tasks. Responsible for network troubleshooting, software installation, and maintaining client relationships. Specialized in communication (17 months), customer care (12 months), and sales & marketing (12 months).</p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Education & Certifications</h2>
+             <div class="row">
+         <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+           <div class="education-card">
+             <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
+             <h3>Higher Secondary (HSC)</h3>
+             <p>Science Group</p>
+             <p class="text-primary">Cantonment Public School And College Saidpur</p>
+             <p class="text-primary">Board: Dinajpur | Year: 2021</p>
+           </div>
+         </div>
+         <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+           <div class="education-card">
+             <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
+             <h3>Bachelor of Business Administration (BBA) Ongoing</h3>
+             <p>Business Administration</p>
+             <p class="text-primary">Dinajpur Govt. College</p>
+             <p class="text-primary">Session: 2021-2022</p>
+           </div>
+         </div>
+         <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+           <div class="education-card">
+             <div class="education-icon"><i class="fas fa-certificate"></i></div>
+             <h3>Professional Training</h3>
+             <p>IT Support & Network Engineering</p>
+             <p class="text-primary">Self-Learning & Job Training</p>
+             <p class="text-primary">2022 - 2023</p>
+           </div>
+         </div>
+         <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+           <div class="education-card">
+             <div class="education-icon"><i class="fas fa-award"></i></div>
+             <h3>Content Creation</h3>
+             <p>Digital Content & Web Design</p>
+             <p class="text-primary">Self-Learning</p>
+             <p class="text-primary">2021 - Present</p>
+           </div>
+         </div>
+       </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+             <div class="row">
+         <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+           <div class="project-card">
+             <div class="project-image">
+               <i class="fas fa-laptop-code"></i>
+             </div>
+             <div class="project-content">
+               <h3 class="project-title">Portfolio Website</h3>
+               <p class="project-description">A modern, responsive portfolio website built with HTML5 and CSS3. Features smooth animations, professional design, and comprehensive CV presentation.</p>
+               <div class="project-tech">
+                 <span class="tech-tag">HTML5</span>
+                 <span class="tech-tag">CSS3</span>
+                 <span class="tech-tag">AOS Animations</span>
+                 <span class="tech-tag">Responsive</span>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+           <div class="project-card">
+             <div class="project-image">
+               <i class="fas fa-tools"></i>
+             </div>
+             <div class="project-content">
+               <h3 class="project-title">IT Support System</h3>
+               <p class="project-description">Comprehensive IT support and network management system for Butterfly IT Zone. Handles client services, troubleshooting, and office administration.</p>
+               <div class="project-tech">
+                 <span class="tech-tag">Network Engineering</span>
+                 <span class="tech-tag">IT Support</span>
+                 <span class="tech-tag">Client Management</span>
+                 <span class="tech-tag">Office Admin</span>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+           <div class="project-card">
+             <div class="project-image">
+               <i class="fas fa-pen-fancy"></i>
+             </div>
+             <div class="project-content">
+               <h3 class="project-title">Content Creation</h3>
+               <p class="project-description">Digital content creation for various platforms. Specialized in creating engaging content, web design elements, and marketing materials.</p>
+               <div class="project-tech">
+                 <span class="tech-tag">Content Creation</span>
+                 <span class="tech-tag">Digital Marketing</span>
+                 <span class="tech-tag">Web Design</span>
+                 <span class="tech-tag">Creative Writing</span>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-info" data-aos="fade-right">
+                     <div class="contact-item">
+             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+             <div>
+               <h5>Primary Email</h5>
+               <p>shiemofficial222@gmail.com</p>
+             </div>
+           </div>
+           <div class="contact-item">
+             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+             <div>
+               <h5>Alternate Email</h5>
+               <p>shiemosr222@gmail.com</p>
+             </div>
+           </div>
+           <div class="contact-item">
+             <div class="contact-icon"><i class="fas fa-phone"></i></div>
+             <div>
+               <h5>Primary Mobile</h5>
+               <p>+880 1820 010217</p>
+             </div>
+           </div>
+           <div class="contact-item">
+             <div class="contact-icon"><i class="fas fa-phone"></i></div>
+             <div>
+               <h5>Secondary Mobile</h5>
+               <p>+880 1306 195306</p>
+             </div>
+           </div>
+           <div class="contact-item">
+             <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+             <div>
+               <h5>Location</h5>
+               <p>Gobindonagar, Thakurgaon Sadar, Thakurgaon, Rangpur, Bangladesh.</p>
+             </div>
+           </div>
+           <div class="contact-item">
+             <div class="contact-icon"><i class="fas fa-user"></i></div>
+             <div>
+               <h5>National ID</h5>
+               <p>8708778660</p>
+             </div>
+           </div>
+        </div>
+        <div class="contact-form" data-aos="fade-left">
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Subject" required>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn-custom btn-primary-custom w-100">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+      </div>
+             <p>&copy; 2025 Shiem Babu. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+
+    // Loading Screen
+    window.addEventListener('load', function() {
+      const loading = document.getElementById('loading');
+      loading.classList.add('hidden');
+      setTimeout(() => {
+        loading.style.display = 'none';
+      }, 500);
+    });
+
+    // Navbar Active State
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Smooth Scrolling
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        targetSection.scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Particle Background
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 50;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 20 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    createParticles();
+
+    // Form Submission
+    const contactForm = document.querySelector('.contact-form form');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your message! I will get back to you soon.');
+      this.reset();
+    });
+
+    // Typing Effect for Hero Title
+    const heroTitle = document.querySelector('.hero-title');
+    const text = heroTitle.textContent;
+    heroTitle.textContent = '';
+    
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        heroTitle.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+    
+    // Start typing effect after page load
+    setTimeout(typeWriter, 1000);
+  </script>
+</body>
+</html>
